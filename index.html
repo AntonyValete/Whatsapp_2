@@ -7,35 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zip Zop 2</title>
     <link rel="stylesheet" href="assets/css/style.css">
-
+    
 
 <body>
     <section id="section-direita">
         <div class="usuario">
-            <img class="foto" src="assets/imagens/CaioComCabelo.jpeg">
+            <img class="foto" src="assets/imagens/CaioComCabelo.jpeg" id="teste">
 
             <div class="campo-mensagem">
                 <input class="texto_usuario" type="text" placeholder="Digite sua mensagem" id="texto-cabelo">
-                <input class="botao_usuario" type="button" value="Enviar" onclick="enviarTexto('texto-cabelo')">
+                <input class="botao_usuario D" type="button" value="Enviar" onclick="enviarTexto('texto-cabelo')">
             </div>
         </div>
     </section>
 
+    <template id="nova-mensagem">
+        <div class="div-mensagens">
+            <p></p>
+        </div>
+    </template>
+
     <main>
-        <template id="nova-mensagem">
-            <div class="div-mensagens">
-                <p></p>
-            </div>
-        </template>
-
-        <div class="div-mensagens align-esquerda">
-            <p>Salve careca</p>
-        </div>
-
-        <div class="div-mensagens align-direita">
-            <p>Que que manda calvo</p>
-        </div>
-
+        
     </main>
 
     <section id="section-esquerda">
@@ -44,7 +37,7 @@
 
             <div class="campo-mensagem">
                 <input class="texto_usuario" type="text" placeholder="Digite sua mensagem" id="texto-careca">
-                <input class="botao_usuario" type="button" value="Enviar" onclick="enviarTexto('texto-careca')">
+                <input class="botao_usuario E" type="button" value="Enviar" onclick="enviarTexto('texto-careca')">
             </div>
         </div>
     </section>

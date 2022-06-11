@@ -11,28 +11,32 @@ body {
 main {
     width: 41vw;
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    row-gap: 1vh;
     padding: 2vh;
-
-    background-color: rgb(170, 206, 51);
-
+    background-color: rgb(77, 79, 79);
     overflow: auto;
-
     box-sizing: border-box;
 }
 
+p {
+    word-wrap: break-word;
+    max-width: 100%;
+    font-family: sans-serif;
+}
+
 .div-mensagens {
-    min-height: 5vh;
-
+    max-width: 80%;
     display: flex;
-
-    border: solid 1px black;
-
+    justify-content: center;
+    flex-shrink: 0;
     box-sizing: border-box;
+    border-style: initial;
+    border-radius: 13px;
+    padding: 4px 4px;
+    background-color: rgb(101, 114, 119);
 }
 
 .align-esquerda {
@@ -46,16 +50,12 @@ main {
 section {
     width: 29.5vw;
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding: 2vh;
-
+    padding: 5vh 2vh 5vh 2vh;
     box-sizing: border-box;
-
-    background-color: lightblue;
+    background-color: rgb(55, 58, 59);
 }
 
 #section-esquerda {
@@ -68,48 +68,82 @@ section {
 
 .usuario {
     width: 100%;
-
+    height: 30%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 
 .foto {
     width: 20vh;
     height: 20vh;
-
     object-fit: cover;
+    border-radius: 50%;
+    transition: transform 5s;
+    /* transform: translate(-33px, -3px); */
+}
 
-    border-radius: 100vw;
+.foto:active {
+    transform: rotate(3600deg);
+    transition: 5s;
+    transition-delay: 2s;
 }
 
 .campo-mensagem {
+    width: 100%;
+    height: 30%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     column-gap: 2vh;
+
+    /* border: solid 1px black; */
+}
+
+::placeholder {
+    text-align: center;
 }
 
 .texto_usuario {
-    border-radius: 8px;
+    width: 50%;
+    height: 50%;
+    border-radius: 15px;
+    border-width: 1px;
+    transition: 0.6s;
 }
 
 .botao_usuario {
-    border-radius: 7px;
-}
-
-.botao_usuario:hover {
-    background-color: rgb(137, 238, 87);
-    transform: scale(1.2);
+    width: 15%;
+    height: 55%;
+    border-radius: 15px;
+    border-width: 1px;
+    font-size: ;
     transition: 0.6s;
 }
 
 .texto_usuario:hover {
-    background-color: rgb(169, 252, 210);
-    transform: scaleY(1.1);
-    transform: scalex(1.1);
+    background-color: rgb(92, 160, 243);
+    transform: scaleY(1.2);
+    transform: scale(1.1);
     transition: 0.6s;
+
+}
+
+.botao_usuario:hover {
+    background-color: #6181F2;
+    transform: scale(1.2);
+    transition: all 0.6s;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+
+}
+
+.D:hover {
+    transform: scale(1.2) rotate(-360deg);
+}
+
+.E:hover {
+    transform: scale(1.2) rotate(360deg);
 }

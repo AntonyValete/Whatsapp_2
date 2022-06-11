@@ -1,23 +1,37 @@
-var usuario_careca = {
-    nome_usuario: "Caio Careca"
-}
-
-var usuario_cabelo = {
-    nome_usuario: "Caio Cabelo"
+var obj_mensagens = {
+    mensagens: []
 }
 
 function enviarTexto(id) {
-    let new_msg = document.getElementById("nova-mensagem").content.querySelector("div").cloneNode(true)
-    let campo_msg = document.getElementById(id).value
-    let log_msg = document.querySelector("main")
+    let campo_msg = document.getElementById(id)
 
     if (campo_msg.value != "") {
-        new_msg.querySelector("p").innerHTML = campo_msg.value
-        campo_msg.value = ""
-
         if (id == "texto-careca") {
-            new_msg.className += " align-direita"
+            obj_mensagens.mensagens.push({ usuario: "Caio Careca", texto: campo_msg.value })
         } else {
+            obj_mensagens.mensagens.push({ usuario: "Caio Cabelo", texto: campo_msg.value })
+        }
+
+        campo_msg.value = ""
+        localStorage.setItem("obj_mensagens", JSON.stringify(obj_mensagens))
+        mostrarMensagens()
+    }
+}
+
+function mostrarMensagens() {
+    let msg_template = document.getElementById("nova-mensagem").content.querySelector("div")
+    let log_msg = document.querySelector("main")
+    let array_msg = JSON.parse(localStorage.getItem("obj_mensagens")).mensagens
+
+    log_msg.innerHTML = ""
+
+    for (let i = 0; i < array_msg.length; i++) {
+        let new_msg = msg_template.cloneNode(true)
+        new_msg.querySelector("p").innerHTML = array_msg[i].texto
+
+        if(array_msg[i].usuario == "Caio Careca"){
+            new_msg.className += " align-direita"
+        } else{
             new_msg.className += " align-esquerda"
         }
 
@@ -25,3 +39,8 @@ function enviarTexto(id) {
     }
 }
 
+if (JSON.parse(localStorage.getItem("obj_mensagens")) != null){
+    obj_mensagens = JSON.parse(localStorage.getItem("obj_mensagens"))
+}
+
+mostrarMensagens()
