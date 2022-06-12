@@ -14,7 +14,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 1vh;
+    row-gap: 1.5vh;
     padding: 2vh;
     background-color: rgb(77, 79, 79);
     overflow: auto;
@@ -34,20 +34,23 @@ p {
     justify-content: center;
     flex-shrink: 0;
     box-sizing: border-box;
-    border-style: initial;
-    border-radius: 13px;
     padding: 4px 4px;
-    background-color: rgb(102, 114, 118);
+
+    border-radius: 2vh;
 }
 
 .align-esquerda {
     align-self: flex-start;
     border-bottom-left-radius: 0;
+    background-color: rgb(89, 145, 44);
+    box-shadow: 0 0 0.8vh rgb(89, 145, 44);
 }
 
 .align-direita {
     align-self: flex-end;
     border-bottom-right-radius: 0;
+    background-color: rgb(228, 125, 29);
+    box-shadow: 0 0 0.8vh rgb(228, 125, 29);
 }
 
 section {
