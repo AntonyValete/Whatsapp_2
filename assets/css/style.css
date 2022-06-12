@@ -15,7 +15,7 @@ main {
     flex-direction: column;
     align-items: center;
     row-gap: 1.5vh;
-    padding: 2vh;
+    padding: 2vh 1vw 20vh 1vw;
     background-color: rgb(77, 79, 79);
     overflow: auto;
     box-sizing: border-box;
@@ -57,20 +57,20 @@ section {
     width: 29.5vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 5vh 2vh 5vh 2vh;
+    padding: 8vh 2vh 8vh 2vh;
     box-sizing: border-box;
 
 }
 
 #section-direita {
-    justify-content: flex-start;
+    flex-direction: column;
     background-image: linear-gradient(to top, black, rgb(65, 65, 67), rgb(81, 81, 81));
 }
 
 #section-esquerda {
-    justify-content: flex-end;
+    flex-direction: column-reverse;
     background-image: linear-gradient(to top, rgb(81, 81, 81), rgb(65, 65, 67), black);
 }
 
@@ -152,6 +152,28 @@ section {
 
 .E:hover {
     transform: scale(1.2) rotate(360deg);
+}
+
+.div-emotes {
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 1vw;
+    row-gap: 1vw;
+
+    padding: 3%;
+
+    background-color: rgb(43, 97, 97);
+
+    box-shadow: 0 0 0.8vh rgb(43, 97, 97);
+    border-radius: 2vh;
+}
+
+.img-emotes {
+    width: 6vh;
+    height: 6vh;
 }
 
 @keyframes gradient {
